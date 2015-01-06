@@ -11,10 +11,10 @@
    "web_accessible_resources": [
       "icon.png"
    ],
-   "description": "Shows Bitstamp BTC price",
+   "description": "Shows Kraken BTC price",
    "manifest_version": 2,
    "options_page": "options.html",
-   "name": "Bitstamp BTC price",
-   "permissions": [ "notifications", "storage", "https://www.bitstamp.net/" ],
-   "version": "0.1.9"
+   "name": "Kraken BTC price",
+   "permissions": [ "notifications", "storage", "https://api.kraken.com/" ],
+   "version": "0.2.0"
 }
