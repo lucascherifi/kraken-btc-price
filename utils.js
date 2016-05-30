@@ -73,14 +73,14 @@ reload_badge = function (manual) {
         type: 'POST',
         url: 'https://api.kraken.com/0/public/Ticker',
         data: {
-        pair: 'XBTUSD'
+        pair: 'XETHZEUR'
         },
         success: function (data) {
             if (!data) return;
             if (data.error && data.error.length > 0) return;
-            if (data.result && !data.result['XXBTZUSD']) return;
+            if (data.result && !data.result['XETHZEUR']) return;
 
-            var usdResult = data.result['XXBTZUSD'];
+            var usdResult = data.result['XETHZEUR'];
             if (!usdResult.c) return;
 
             var value = parseFloat(usdResult.c[0]),
@@ -102,7 +102,7 @@ reload_badge = function (manual) {
                 });
             }
             chrome.browserAction.setTitle({
-                'title': '1 BTC = ' + value.toFixed(2) + ' USD'
+                'title': '1 ETH = ' + value.toFixed(2) + ' EUR'
             });
             chrome.browserAction.setBadgeText({
                 'text': badge_value.toFixed(get_precision())
@@ -110,12 +110,12 @@ reload_badge = function (manual) {
             store_float('last-value', value);
             if (store.get('notification-max') && value > last_max) {
                 store.set('last-max', value);
-                notify('New maximum BTC price', 'The highest price is now ' + value);
+                notify('New maximum ETH price', 'The highest price is now ' + value);
                 $('#last_max').val(value);
             }
             if (store.get('notification-min') && value < last_min) {
                 store.set('last-min', value);
-                notify('New minimum BTC price', 'The lowest price is now ' + value);
+                notify('New minimum ETH price', 'The lowest price is now ' + value);
                 $('#last_min').val(value);
             }
             if (store.get('notification-diff') && store.get('last-diff')) {
@@ -138,7 +138,7 @@ reload_badge = function (manual) {
                         abs = '-' + abs;
                     }
                     last_values = [value];
-                    notify(title, 'Within ' + within + ' fetches/minutes price changed ' + abs + ' USD.');
+                    notify(title, 'Within ' + within + ' fetches/minutes price changed ' + abs + ' ETH.');
                 }
             }
         }

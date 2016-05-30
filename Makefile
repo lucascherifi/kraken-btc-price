@@ -1,3 +1,3 @@
 all:
-	rm -f ./kraken-btc-price.zip
-	zip --exclude=*README.md* --exclude=*Makefile* -r ./kraken-btc-price.zip ./*
+	rm -f ./kraken-eth-price.zip
+	zip --exclude=*README.md* --exclude=*Makefile* -r ./kraken-eth-price.zip ./*
