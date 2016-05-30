@@ -16,5 +16,5 @@
    "options_page": "options.html",
    "name": "Kraken ETH price",
    "permissions": [ "notifications", "storage", "https://api.kraken.com/" ],
-   "version": "0.2.1"
+   "version": "0.7.9"
 }
